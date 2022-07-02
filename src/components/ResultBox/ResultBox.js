@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import styles from './ResultBox.module.scss';
 
 const ResultBox = ({ from, to, amount }) => {
-
+  console.log('am', amount);
   const convertedAmount = useMemo(() => {
     if(from === 'USD' && to === 'PLN') return convertUSDToPLN(amount);
     if(from === 'PLN' && to === 'USD') return convertPLNToUSD(amount);
