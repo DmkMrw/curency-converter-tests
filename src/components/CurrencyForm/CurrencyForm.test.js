@@ -5,40 +5,40 @@ import cleanup from '@testing-library/user-event';
 
 describe('Component CurrencyForm', () => {
      it('should render without crashing', () => {
-     render(<CurrencyForm action={() => {}} />);
+          render(<CurrencyForm action={() => { }} />);
      });
-//      it('should run action callback with proper data on form submit', () => {
-//      const action = jest.fn();
+     //      it('should run action callback with proper data on form submit', () => {
+     //      const action = jest.fn();
 
-//     // render component
-//      render(<CurrencyForm action={action} />);
+     //     // render component
+     //      render(<CurrencyForm action={action} />);
 
-//     // find “convert” button
-//      const submitButton = screen.getByText('Convert');
+     //     // find “convert” button
+     //      const submitButton = screen.getByText('Convert');
 
-//     // simulate user click on "convert" button
-//      userEvent.click(submitButton);
+     //     // simulate user click on "convert" button
+     //      userEvent.click(submitButton);
 
-//     // check if action callback was called once
-//      expect(action).toHaveBeenCalledTimes(1);
+     //     // check if action callback was called once
+     //      expect(action).toHaveBeenCalledTimes(1);
 
-//      // find field elems
-//      const amountField = screen.getByTestId('amount');
-//      const fromField = screen.getByTestId('from-select');
-//      const toField = screen.getByTestId('to-select');
+     //      // find field elems
+     //      const amountField = screen.getByTestId('amount');
+     //      const fromField = screen.getByTestId('from-select');
+     //      const toField = screen.getByTestId('to-select');
 
-//      // set test values to fields
-//      userEvent.type(amountField, '100');
-//      userEvent.selectOptions(fromField, 'PLN');
-//      userEvent.selectOptions(toField, 'USD');
+     //      // set test values to fields
+     //      userEvent.type(amountField, '100');
+     //      userEvent.selectOptions(fromField, 'PLN');
+     //      userEvent.selectOptions(toField, 'USD');
 
-//      // check if action callback was called once and with proper argument
-//      expect(action).toHaveBeenCalledTimes(1);
-//      expect(action).toHaveBeenCalledWith({ amount: 100, from: 'PLN', to: 'USD' });                 // KOLEJNOSC MA ZNACZENIE??
-//      });
+     //      // check if action callback was called once and with proper argument
+     //      expect(action).toHaveBeenCalledTimes(1);
+     //      expect(action).toHaveBeenCalledWith({ amount: 100, from: 'PLN', to: 'USD' });                 // KOLEJNOSC MA ZNACZENIE??
+     //      });
 
 
-  // set test values to fields
+     // set test values to fields
      const testCases = [
           { amount: '100', from: 'PLN', to: 'USD' },
           { amount: '20', from: 'USD', to: 'PLN' },
@@ -73,6 +73,6 @@ describe('Component CurrencyForm', () => {
                expect(action).toHaveBeenCalledWith({ amount: parseInt(testObj.amount), from: testObj.from, to: testObj.to });
           });
           // unmount component
-          cleanup();
+          // cleanup();
      };
 });
