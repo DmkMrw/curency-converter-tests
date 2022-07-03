@@ -17,7 +17,9 @@ const ResultBox = ({ from, to, amount }) => {
 
   return (
     <div className={styles.result} data-testid="result-div">
-      {formattedAmount} = {convertedAmount}
+
+      {amount < 0 ? 'Wrong value' : `${formattedAmount} = ${convertedAmount}`}
+
     </div>
   );
 };

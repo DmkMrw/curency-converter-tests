@@ -55,6 +55,7 @@ describe('Component CurrencyForm', () => {
           // check proper info
           expect(resultDiv).toHaveTextContent('PLN 100.00 = PLN 100.00');
      });
+
      it('should render proper info when USD -> USD', () => {
           render(<ResultBox from="USD" to="USD" amount={100} />);
 
@@ -63,4 +64,12 @@ describe('Component CurrencyForm', () => {
           // check proper info
           expect(resultDiv).toHaveTextContent('$100.00 = $100.00');
      });
+
+     it('should render Error when amount < 0', () => {
+          render(<ResultBox from="PLN" to="USD" amount={-5} />);
+           // find fields elems
+          const resultDiv = screen.getByTestId('result-div');
+          // check proper info
+          expect(resultDiv).toHaveTextContent('Wrong value');
+     })
 });
